@@ -1,0 +1,95 @@
+{
+  "name": "hospital-management-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@progress/kendo-data-query": "^1.7.1",
+    "@progress/kendo-drawing": "^1.21.2",
+    "@progress/kendo-licensing": "^1.5.1",
+    "@progress/kendo-react-animation": "^10.0.0",
+    "@progress/kendo-react-buttons": "^10.0.0",
+    "@progress/kendo-react-charts": "^10.0.0",
+    "@progress/kendo-react-common": "^10.0.0",
+    "@progress/kendo-react-conversational-ui": "^10.0.0",
+    "@progress/kendo-react-data-tools": "^10.0.0",
+    "@progress/kendo-react-dateinputs": "^10.0.0",
+    "@progress/kendo-react-dialogs": "^10.0.0",
+    "@progress/kendo-react-dropdowns": "^10.0.0",
+    "@progress/kendo-react-editor": "^10.0.0",
+    "@progress/kendo-react-excel-export": "^10.0.0",
+    "@progress/kendo-react-form": "^10.0.0",
+    "@progress/kendo-react-gantt": "^10.0.0",
+    "@progress/kendo-react-gauges": "^10.0.0",
+    "@progress/kendo-react-grid": "^10.0.0",
+    "@progress/kendo-react-indicators": "^10.0.0",
+    "@progress/kendo-react-inputs": "^10.0.0",
+    "@progress/kendo-react-intl": "^10.0.0",
+    "@progress/kendo-react-labels": "^10.0.0",
+    "@progress/kendo-react-layout": "^10.0.0",
+    "@progress/kendo-react-listbox": "^10.0.0",
+    "@progress/kendo-react-listview": "^10.0.0",
+    "@progress/kendo-react-map": "^10.0.0",
+    "@progress/kendo-react-notification": "^10.0.0",
+    "@progress/kendo-react-orgchart": "^10.0.0",
+    "@progress/kendo-react-pdf": "^10.0.0",
+    "@progress/kendo-react-pdf-viewer": "^10.0.0",
+    "@progress/kendo-react-pivotgrid": "^10.0.0",
+    "@progress/kendo-react-popup": "^10.0.0",
+    "@progress/kendo-react-progressbars": "^10.0.0",
+    "@progress/kendo-react-ripple": "^10.0.0",
+    "@progress/kendo-react-scheduler": "^10.0.0",
+    "@progress/kendo-react-scrollview": "^10.0.0",
+    "@progress/kendo-react-sortable": "^10.0.0",
+    "@progress/kendo-react-spreadsheet": "^10.0.0",
+    "@progress/kendo-react-taskboard": "^10.0.0",
+    "@progress/kendo-react-tooltip": "^10.0.0",
+    "@progress/kendo-react-treelist": "^10.0.0",
+    "@progress/kendo-react-treeview": "^10.0.0",
+    "@progress/kendo-react-upload": "^10.0.0",
+    "@progress/kendo-svg-icons": "^4.0.0",
+    "@progress/kendo-theme-bootstrap": "^10.3.1",
+    "@progress/kendo-theme-default": "^10.3.1",
+    "@progress/kendo-theme-material": "^10.3.1",
+    "@tensorflow/tfjs": "^4.22.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
+    "@testing-library/user-event": "^14.6.1",
+    "file-saver": "^2.0.5",
+    "framer-motion": "^12.5.0",
+    "openai": "^4.87.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.3.0",
+    "react-scripts": "5.0.1",
+    "styled-components": "^6.1.16",
+    "web-vitals": "^3.5.2",
+    "xlsx": "^0.18.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "sass": "^1.85.1"
+  }
+}

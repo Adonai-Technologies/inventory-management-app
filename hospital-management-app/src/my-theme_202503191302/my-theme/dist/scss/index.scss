@@ -1,0 +1,18 @@
+@use 'tokens' as *;
+@use '@progress/kendo-theme-default/scss/index.scss' as * with (
+
+  $kendo-colors: (  
+    info-on-subtle: $tb-kendo-color-info-on-subtle,
+  ),
+    $kendo-font-family: $tb-kendo-font-family,
+  $kendo-font-size: $tb-kendo-font-size,
+  $kendo-font-weight-normal: $tb-kendo-font-weight-normal,
+  $kendo-line-height: $tb-kendo-line-height,
+
+);
+@use '@progress/kendo-theme-utils/scss/all.scss' as *;
+@use 'overrides' as *;
+
+@include kendo-theme--styles();
+
+@include tb-overrides();

@@ -1,0 +1,60 @@
+// Compatible with @progress/kendo-theme-default v.10.2.0
+
+$tb-kendo-color-info-on-subtle: #405578ff;
+
+
+    $tb-kendo-font-family: inherit;
+    $tb-kendo-font-size: 14px;
+    $tb-kendo-font-weight-normal: 400;
+    $tb-kendo-line-height: 1.4285714286;
+    $enable-gradients: true;
+
+$tb-typography: (
+  kendo-default-typography: (
+      font-family: 'inherit',
+      font-size: 14px,
+      font-weight: 400,
+      line-height: 1.4285714286,
+        ),
+);
+
+@mixin typography-classes ($typography) {
+  @each $selector, $property in $typography {
+    &-#{$selector} {
+      @each $propName, $propValue in $property {
+        #{$propName}: #{$propValue};
+      }
+    } &-#{$selector}-important {
+      @each $propName, $propValue in $property {
+        #{$propName}: $propValue !important;
+      }
+    }
+  }
+}
+
+$tb-effects: (
+  tb-internal-none-effects: (
+      box-shadow: (none), filter: (none), backdrop-filter: (none),  ),
+);
+
+@mixin effects-classes ($effects) {
+  @each $selector, $property in $effects {
+    &-#{$selector} {
+      @each $propName, $propValue in $property {
+        #{$propName}: $propValue;
+      }
+    } &-#{$selector}-important {
+      @each $propName, $propValue in $property {
+        #{$propName}: $propValue !important;
+      }
+    }
+  }
+}
+
+%tb-typography {
+  @include typography-classes($tb-typography);
+}
+
+%tb-effects {
+  @include effects-classes($tb-effects);
+}

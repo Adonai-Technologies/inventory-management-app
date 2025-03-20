@@ -41,14 +41,37 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [selectedItems, setSelectedItems] = useState([]);
   const [userPoints, setUserPoints] = useState(0);
+  const [predictions, setPredictions] = useState({}); // Store AI predictions
 
-  // AI Integration: Predict Stock Requirements
-  const predictStock = (item) => {
+  // AI Integration: Train a linear regression model
+  const trainModel = async () => {
     const model = tf.sequential();
     model.add(tf.layers.dense({ units: 1, inputShape: [1] }));
     model.compile({ loss: "meanSquaredError", optimizer: "sgd" });
-    const predictedStock = model.predict(tf.tensor([item.stock]));
-    return predictedStock.dataSync()[0];
+
+    // Historical stock data (example)
+    const xs = tf.tensor1d([10, 20, 30, 40, 50]); // Stock levels
+    const ys = tf.tensor1d([5, 10, 15, 20, 25]); // Reorder levels
+
+    // Train the model
+    console.log("Training model...");
+    await model.fit(xs, ys, { epochs: 100 });
+    console.log("Model trained successfully!");
+
+    return model;
+  };
+
+  // Predict stock requirements using the trained model
+  const predictStock = async (item) => {
+    try {
+      const model = await trainModel();
+      const predictedStock = model.predict(tf.tensor1d([item.stock]));
+      const predictedValue = predictedStock.dataSync()[0];
+      console.log(`Predicted stock for ${item.name}: ${predictedValue}`);
+      setPredictions((prev) => ({ ...prev, [item.id]: predictedValue }));
+    } catch (error) {
+      console.error("Error predicting stock:", error);
+    }
   };
 
   // Gamification: Calculate User Points
@@ -380,6 +403,7 @@ const App = () => {
                 <td>
                   <Button onClick={() => handleEdit(props.dataItem)} style={{ marginRight: "10px", backgroundColor: "#ffc107", color: "white", fontWeight: "bold", borderRadius: "6px" }}>Edit</Button>
                   <Button onClick={() => handleDelete(props.dataItem.id)} style={{ backgroundColor: "#dc3545", color: "white", fontWeight: "bold", borderRadius: "6px" }}>Delete</Button>
+                  <Button onClick={() => predictStock(props.dataItem)} style={{ backgroundColor: "#28a745", color: "white", fontWeight: "bold", borderRadius: "6px", marginLeft: "10px" }}>Predict Stock</Button>
                 </td>
               )} />
             </Grid>

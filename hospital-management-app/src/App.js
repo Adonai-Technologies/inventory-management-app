@@ -255,10 +255,19 @@ const App = () => {
         </Toolbar>
 
         {lowStockItems.length > 0 && (
-          <Notification type={{ style: "warning", icon: true }} closable={true} style={{ margin: "15px 0", backgroundColor: "#fff3cd", borderLeft: "6px solid #ffc107", padding: "10px" }}>
-            <strong>Warning:</strong> Some items are running low on stock!
-          </Notification>
-        )}
+  <Notification
+    type={{ style: "warning", icon: true }}
+    closable={true}
+    style={{ 
+      margin: "15px 0", 
+      backgroundColor: "#fff3cd", 
+      borderLeft: "6px solid #ffc107", 
+      padding: "10px" 
+    }}
+  >
+    <strong>Warning:</strong> Some items are running low on stock!
+  </Notification>
+)}
 
         {/* Inventory Summary Cards */}
         <div style={{ display: "flex", gap: "20px", marginBottom: "20px" }}>
